@@ -1,9 +1,10 @@
 pipeline {
-  agent none
+  agent any
   stages {
-    stage('build') {
+    stage('SCM') {
       steps {
         build(job: 'build', propagate: true, quietPeriod: 4, wait: true)
+        readTrusted 'C:\\Users\\slettat\\Desktop\\CI'
       }
     }
 
